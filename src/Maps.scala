@@ -1,0 +1,28 @@
+object Maps {
+  val colors = Map("red"->123, "black"->234, "orange"->345, "brown"->456)
+
+  def main(args:Array[String]): Unit ={
+
+    val states = Map("AL"-> "Alabama", "AK"->"Alaska","FL"->"Florida")
+    val states1 = Map("GA"-> "Georgia", "CA"->"California","FL"->"Florida")
+    //states =+("MI"->"Mileee")
+
+    for((k,v)<- states) printf("Key: %s, Value: %s\n", k, v)
+
+    for(x<-states) println("Key: "+ x._1 +", Value: "+ x._2)
+    var similar =""
+    states.keys.foreach( (key)=>if(states1.contains(key)) similar += (key, (states1.get(key))))
+    println("similar: "+ similar)
+
+
+
+
+//    for(name<-args) println(
+//      colors.get(name) match{
+//        case Some(cod) => name + " has code:" + cod
+//        case None => "Unknown color:" + name
+//      }
+//
+//    )
+  }
+}
